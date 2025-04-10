@@ -33,6 +33,7 @@ export const initialState = {
 
 export default (state = initialState, action = {}) => {
     const { type } = action;
+    
     switch (type) {
         case FETCH_TOKENS_REQUESTED: {
             const { pageIndex, sortBy, search, startDate, endDate } = action;

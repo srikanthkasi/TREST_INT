@@ -1,6 +1,9 @@
 import { createSelector } from 'reselect';
 
-export const getAuthState = (state) => state.auth;
+export const getAuthState = (state) => {
+    console.log("Redux State in getAuthState:" + JSON.stringify(state));
+    return state.auth;
+  };
 
 export const getAuthToken = createSelector(
     getAuthState,

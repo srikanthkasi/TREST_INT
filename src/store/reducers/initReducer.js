@@ -3,14 +3,14 @@ import {
     INIT_STATUS_INITIALIZED,
     INIT_STATUS_INITIALIZING,
 } from '../constants/initConstants';
-import { INITIALIZATION_FAILED, INITIALIZATION_SUCCEEDED } from './actions';
+import { INITIALIZATION_FAILED, INITIALIZATION_SUCCEEDED } from '../actions/initActions';
 
 export const initInitialState = {
     status: INIT_STATUS_INITIALIZING,
     errors: null,
 };
 
-export default function initReducer(state = initInitialState, action) {
+const initReducer = function*(state = initInitialState, action) {
     const { type } = action;
 
     if (type === INITIALIZATION_SUCCEEDED) {
@@ -27,4 +27,6 @@ export default function initReducer(state = initInitialState, action) {
     }
 
     return state;
-}
+};
+
+export default initReducer;

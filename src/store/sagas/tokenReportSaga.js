@@ -22,6 +22,7 @@ export function* fetchTokens() {
             query,
         });
         const { data: { items = [], totalItems } = {}, error } = response;
+        
         if (error && error.message) {
             yield put(fetchTokensFailed(error.message));
         } else {

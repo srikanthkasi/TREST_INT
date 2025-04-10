@@ -10,10 +10,10 @@ import {
 
 export const initAuthState = {
     status: AUTH_STATUS_REQUESTED,
-    errors: null,
+    errors: null
 };
 
-export default function(state = initAuthState, action) {
+const authReducer =  (state = initAuthState, action) => {
     const { type } = action;
 
     if (type === AUTHENTICATION_SUCCEEDED) {
@@ -32,4 +32,6 @@ export default function(state = initAuthState, action) {
     }
 
     return state;
-}
+};
+
+export default authReducer;

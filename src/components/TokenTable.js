@@ -16,11 +16,11 @@ export default function TokenTable({ tokens }) {
       <tbody>
         {tokens.map((token, index) => (
           <tr key={index}>
-            <td>{token.identifier}</td>
-            <td>{token.name}</td>
-            <td>{token.email}</td>
-            <td>{token.status}</td>
-            <td>{token.submitted}</td>
+            <td>{token.taId}</td>
+            <td>{token.testAuthority.name}</td>
+            <td>{token.testAuthority.email}</td>
+            <td>{token.testAuthority.status}</td>
+            <td>{token.tokensSubmitted}</td>
           </tr>
         ))}
       </tbody>
